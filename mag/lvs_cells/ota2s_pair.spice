@@ -1,0 +1,10 @@
+* ota2s_pair: layout-only cell for a standalone LVS. The three device lines are copied unchanged from the frozen
+* ota2s subckt in ../xschem/simulation/bgr.spice (= ota2s.spice, sha256 71510555...); only the subckt wrapper is added.
+.subckt ota2s_pair INN INP tail d1 x1 VDPWR
+XMP1 d1 INN tail VDPWR sky130_fd_pr__pfet_01v8_lvt L=6 W=25 nf=1 ad=7.25 as=7.25 pd=50.58 ps=50.58 nrd=0.0116 nrs=0.0116 sa=0 sb=0
++ sd=0 mult=24 m=24
+XMP2 x1 INP tail VDPWR sky130_fd_pr__pfet_01v8_lvt L=6 W=25 nf=1 ad=7.25 as=7.25 pd=50.58 ps=50.58 nrd=0.0116 nrs=0.0116 sa=0 sb=0
++ sd=0 mult=24 m=24
+XDP tail VDPWR tail VDPWR sky130_fd_pr__pfet_01v8_lvt L=6 W=25 nf=1 ad=7.25 as=7.25 pd=50.58 ps=50.58 nrd=0.0116 nrs=0.0116 sa=0
++ sb=0 sd=0 mult=8 m=8
+.ends

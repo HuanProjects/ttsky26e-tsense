@@ -1,0 +1,12 @@
+* bg_bias: layout-only cell for a standalone LVS. The four device lines are copied unchanged from the frozen
+* bg_core subckt in ../xschem/simulation/bgr.spice (sha256 dc656f11...); only the subckt wrapper is added.
+.subckt bg_bias nb ibias ib_cmp1 ib_cmp2 VGND
+XMNB1 nb nb VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0 sd=0
++ mult=1
+XMNB2 ibias nb VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0 sd=0
++ mult=1
+XMNB3 ib_cmp1 nb VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0
++ sd=0 mult=4 m=4
+XMNB4 ib_cmp2 nb VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0
++ sd=0 mult=4 m=4
+.ends

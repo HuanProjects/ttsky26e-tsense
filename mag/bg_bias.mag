@@ -1,0 +1,27 @@
+magic
+tech sky130A
+timestamp 1794376837
+<< metal1 >>
+rect 740 0 940 60
+<< metal2 >>
+rect 125 -200 175 5470
+rect 225 -200 275 6030
+rect 325 -200 375 3750
+rect 425 3110 475 7030
+rect 660 6950 740 7030
+use bg_bias_arr  bg_bias_arr_0
+timestamp 1794376109
+transform 1 0 0 0 1 0
+box 0 0 1680 7030
+<< labels >>
+rlabel metal2 325 -200 375 -140 0 ibias
+port 1 nsew
+rlabel metal2 225 -200 275 -140 0 ib_cmp1
+port 2 nsew
+rlabel metal2 125 -200 175 -140 0 ib_cmp2
+port 3 nsew
+rlabel metal2 660 6950 740 7030 0 nb
+port 4 nsew
+rlabel metal1 800 10 880 50 0 VGND
+port 5 nsew
+<< end >>

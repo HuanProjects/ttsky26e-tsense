@@ -1,0 +1,20 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1795297214
+<< metal3 >>
+rect 9732 200 9932 400
+<< metal4 >>
+rect 1857 -120 2657 100
+rect 6723 -120 7523 100
+rect 0 -320 9732 -120
+use vref_decap_arr  vref_decap_arr_0
+timestamp 1795296866
+transform 1 0 0 0 1 0
+box 0 0 9732 4514
+<< labels >>
+rlabel metal4 0 -320 200 -120 0 vref
+port 1 nsew
+rlabel metal3 9732 200 9932 400 0 VGND
+port 2 nsew
+<< end >>

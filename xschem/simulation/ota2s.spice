@@ -1,0 +1,53 @@
+** sch_path: /foss/designs/tt_tsense/xschem/ota2s.sch
+**.subckt ota2s INP INN OUT VDPWR VGND IBIAS CHOP CHOPB
+*.ipin INN
+*.ipin INP
+*.ipin IBIAS
+*.opin OUT
+*.iopin VDPWR
+*.iopin VGND
+*.ipin CHOPB
+*.ipin CHOP
+XMREF IBIAS IBIAS VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
++ sb=0 sd=0 mult=1
+XMTAIL tail IBIAS VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
++ sb=0 sd=0 mult=2 m=2
+XMP1 d1 INN tail VDPWR sky130_fd_pr__pfet_01v8_lvt L=6 W=25 nf=1 ad=7.25 as=7.25 pd=50.58 ps=50.58 nrd=0.0116 nrs=0.0116 sa=0 sb=0
++ sd=0 mult=24 m=24
+XMP2 x1 INP tail VDPWR sky130_fd_pr__pfet_01v8_lvt L=6 W=25 nf=1 ad=7.25 as=7.25 pd=50.58 ps=50.58 nrd=0.0116 nrs=0.0116 sa=0 sb=0
++ sd=0 mult=24 m=24
+XMN1 d1 g12 VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XMN2 x1 g12 VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XMP3 OUT IBIAS VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0 sb=0
++ sd=0 mult=6 m=6
+XMN3 OUT g3 VGND VGND sky130_fd_pr__nfet_01v8 L=1 W=7 nf=1 ad=2.03 as=2.03 pd=14.58 ps=14.58 nrd=0.0414285714285714
++ nrs=0.0414285714285714 sa=0 sb=0 sd=0 mult=1
+XRZ1 net1 g3 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ2 net2 net1 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ3 net3 net2 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ4 net4 net3 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ5 net5 net4 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ6 cz net5 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XCC cz OUT sky130_fd_pr__cap_mim_m3_1 W=25 L=25 MF=8 m=8
+XDP tail VDPWR tail VDPWR sky130_fd_pr__pfet_01v8_lvt L=6 W=25 nf=1 ad=7.25 as=7.25 pd=50.58 ps=50.58 nrd=0.0116 nrs=0.0116 sa=0
++ sb=0 sd=0 mult=8 m=8
+XDNA d1 VGND VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XDNB x1 VGND VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XDB VDPWR VDPWR VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0 sb=0
++ sd=0 mult=2 m=2
+XRD1 VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRD2 VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XSD1 d1 CHOPB g12 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+XSD2 x1 CHOP g12 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+XSG2 g3 CHOP d1 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+XSG1 x1 CHOPB g3 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+**.ends
+.end

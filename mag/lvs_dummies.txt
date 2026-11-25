@@ -1,0 +1,7 @@
+# lvs_dummies.txt -- layout-only dummy devices, added by lvs.sh to its LVS copy of the frozen bgr.spice.
+# Format: <subckt name> <SPICE instance line>. Every terminal is on one supply net, so nothing simulated changes.
+# bg_mirror: 10 dummy fingers (rows 1 and 6, and the two ends of the P5 row), gate/drain/source/body on VDPWR.
+bg_mirror XMDUM VDPWR VDPWR VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=8.8 nf=1 mult=10 m=10
+# bg_bias (standalone) and bg_core (where the layout cell is flattened): the bias row's 2 end fingers, all on VGND.
+bg_bias XMBDUM VGND VGND VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 mult=2 m=2
+bg_core XMBDUM VGND VGND VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 mult=2 m=2

@@ -1,0 +1,89 @@
+** sch_path: /foss/designs/tt_tsense/xschem/readout_glue.sch
+**.subckt readout_glue ui0 ui1 ui2 ui3 ui4 ui5 ui6 ui7 rst cmp_raw su osc_en osc_enb thr_sel thr_selb vref_mon_en vref_mon_enb
+*+ iptat_mon_en iptat_mon_enb ich_sel chop_sel ring_en i3_sel uo0 uo2 uo4 uo5 uo7 uio_out0 uio_out1 uio_out2 uio_out3 uio_out4 uio_out5 uio_out6
+*+ uio_out7 uio_oe0 uio_oe1 uio_oe2 uio_oe3 uio_oe4 uio_oe5 uio_oe6 uio_oe7 VDPWR VGND
+*.ipin ui0
+*.ipin ui1
+*.ipin ui2
+*.ipin ui3
+*.ipin ui4
+*.ipin ui5
+*.ipin ui6
+*.ipin ui7
+*.ipin rst
+*.ipin cmp_raw
+*.ipin su
+*.opin osc_en
+*.opin osc_enb
+*.opin thr_sel
+*.opin thr_selb
+*.opin vref_mon_en
+*.opin vref_mon_enb
+*.opin iptat_mon_en
+*.opin iptat_mon_enb
+*.opin ich_sel
+*.opin chop_sel
+*.opin ring_en
+*.opin i3_sel
+*.opin uo0
+*.opin uo2
+*.opin uo4
+*.opin uo5
+*.opin uo7
+*.opin uio_out0
+*.opin uio_out1
+*.opin uio_out2
+*.opin uio_out3
+*.opin uio_out4
+*.opin uio_out5
+*.opin uio_out6
+*.opin uio_out7
+*.opin uio_oe0
+*.opin uio_oe1
+*.opin uio_oe2
+*.opin uio_oe3
+*.opin uio_oe4
+*.opin uio_oe5
+*.opin uio_oe6
+*.opin uio_oe7
+*.iopin VDPWR
+*.iopin VGND
+xbi0 ui0 VGND VGND VDPWR VDPWR osc_en sky130_fd_sc_hd__buf_1
+xbi1 ui1 VGND VGND VDPWR VDPWR thr_sel sky130_fd_sc_hd__buf_1
+xbi2 ui2 VGND VGND VDPWR VDPWR vref_mon_en sky130_fd_sc_hd__buf_1
+xbi3 ui3 VGND VGND VDPWR VDPWR iptat_mon_en sky130_fd_sc_hd__buf_1
+xbi4 ui4 VGND VGND VDPWR VDPWR ich_sel sky130_fd_sc_hd__buf_1
+xbi5 ui5 VGND VGND VDPWR VDPWR chop_sel sky130_fd_sc_hd__buf_1
+xbi6 ui6 VGND VGND VDPWR VDPWR ring_en sky130_fd_sc_hd__buf_1
+xbi7 ui7 VGND VGND VDPWR VDPWR i3_sel sky130_fd_sc_hd__buf_1
+xci0 osc_en VGND VGND VDPWR VDPWR osc_enb sky130_fd_sc_hd__inv_1
+xci1 thr_sel VGND VGND VDPWR VDPWR thr_selb sky130_fd_sc_hd__inv_1
+xci2 vref_mon_en VGND VGND VDPWR VDPWR vref_mon_enb sky130_fd_sc_hd__inv_1
+xci3 iptat_mon_en VGND VGND VDPWR VDPWR iptat_mon_enb sky130_fd_sc_hd__inv_1
+xtk rst VGND VGND VDPWR VDPWR rst_k sky130_fd_sc_hd__buf_2
+xtff rst_k tqb osc_en VGND VGND VDPWR VDPWR tq sky130_fd_sc_hd__dfrtp_1
+xti tq VGND VGND VDPWR VDPWR tqb sky130_fd_sc_hd__inv_1
+xto tq VGND VGND VDPWR VDPWR uo0 sky130_fd_sc_hd__buf_2
+xcb cmp_raw VGND VGND VDPWR VDPWR uo2 sky130_fd_sc_hd__buf_2
+xbgi su VGND VGND VDPWR VDPWR bg_ok sky130_fd_sc_hd__inv_1
+xbgb bg_ok VGND VGND VDPWR VDPWR uo4 sky130_fd_sc_hd__buf_2
+xtie0 VGND VGND VDPWR VDPWR tie_hi0 uo5 sky130_fd_sc_hd__conb_1
+xtie1 VGND VGND VDPWR VDPWR tie_hi1 uo7 sky130_fd_sc_hd__conb_1
+xtie2 VGND VGND VDPWR VDPWR tie_hi2 uio_out0 sky130_fd_sc_hd__conb_1
+xtie3 VGND VGND VDPWR VDPWR tie_hi3 uio_out1 sky130_fd_sc_hd__conb_1
+xtie4 VGND VGND VDPWR VDPWR tie_hi4 uio_out2 sky130_fd_sc_hd__conb_1
+xtie5 VGND VGND VDPWR VDPWR tie_hi5 uio_out3 sky130_fd_sc_hd__conb_1
+xtie6 VGND VGND VDPWR VDPWR tie_hi6 uio_out4 sky130_fd_sc_hd__conb_1
+xtie7 VGND VGND VDPWR VDPWR tie_hi7 uio_out5 sky130_fd_sc_hd__conb_1
+xtie8 VGND VGND VDPWR VDPWR tie_hi8 uio_out6 sky130_fd_sc_hd__conb_1
+xtie9 VGND VGND VDPWR VDPWR tie_hi9 uio_out7 sky130_fd_sc_hd__conb_1
+xtie10 VGND VGND VDPWR VDPWR tie_hi10 uio_oe0 sky130_fd_sc_hd__conb_1
+xtie11 VGND VGND VDPWR VDPWR tie_hi11 uio_oe1 sky130_fd_sc_hd__conb_1
+xtie12 VGND VGND VDPWR VDPWR tie_hi12 uio_oe2 sky130_fd_sc_hd__conb_1
+xtie13 VGND VGND VDPWR VDPWR tie_hi13 uio_oe3 sky130_fd_sc_hd__conb_1
+xtie14 VGND VGND VDPWR VDPWR tie_hi14 uio_oe4 sky130_fd_sc_hd__conb_1
+xtie15 VGND VGND VDPWR VDPWR tie_hi15 uio_oe5 sky130_fd_sc_hd__conb_1
+xtie16 VGND VGND VDPWR VDPWR tie_hi16 uio_oe6 sky130_fd_sc_hd__conb_1
+xtie17 VGND VGND VDPWR VDPWR tie_hi17 uio_oe7 sky130_fd_sc_hd__conb_1
+**.ends
+.end

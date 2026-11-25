@@ -1,0 +1,5 @@
+* vref_decap: layout-only cell for a standalone LVS. The V_REF decap (2 pF, spec section 3); the tile-level schematic
+* carries the same device line.
+.subckt vref_decap vref VGND
+XCdec vref VGND sky130_fd_pr__cap_mim_m3_1 W=22.17 L=22.17 MF=2 m=2
+.ends

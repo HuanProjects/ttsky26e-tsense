@@ -1,0 +1,26 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1794465097
+<< metal1 >>
+rect 1010 4620 1388 4840
+rect 1766 4620 2144 4840
+rect 1400 2400 1600 2600
+rect 632 220 1010 440
+rect 1388 220 1766 440
+rect 2144 220 2522 440
+<< metal2 >>
+rect 552 4650 712 4810
+rect 2442 4650 2602 4810
+use ota2s_rz_arr  ota2s_rz_arr_0
+timestamp 1794462076
+transform 1 0 0 0 1 0
+box -53 -53 3207 5111
+<< labels >>
+rlabel metal2 552 4650 712 4810 0 g3
+port 1 nsew
+rlabel metal2 2442 4650 2602 4810 0 cz
+port 2 nsew
+rlabel metal1 1400 2400 1600 2600 0 VGND
+port 3 nsew
+<< end >>

@@ -1,0 +1,17 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1795296866
+<< checkpaint >>
+rect -1260 -1260 10992 5774
+<< metal3 >>
+rect 0 0 9732 4514
+use sky130_fd_pr__cap_mim_m3_1_8267VX  XCdec_c0
+timestamp 0
+transform 1 0 2433 0 1 2257
+box -2433 -2257 2433 2257
+use sky130_fd_pr__cap_mim_m3_1_8267VX  XCdec_c1
+timestamp 0
+transform 1 0 7299 0 1 2257
+box -2433 -2257 2433 2257
+<< end >>

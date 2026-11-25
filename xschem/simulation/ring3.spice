@@ -1,0 +1,158 @@
+** sch_path: /foss/designs/tt_tsense/xschem/ring3.sch
+**.subckt ring3 ring_en uo1 uo3 uo6 VDPWR VGND
+*.ipin ring_en
+*.opin uo1
+*.opin uo3
+*.opin uo6
+*.iopin VDPWR
+*.iopin VGND
+xn ring_en uo1 VDPWR VGND ring_n
+xp ring_en uo3 VDPWR VGND ring_p
+xd ring_en uo6 VDPWR VGND ring_d
+**.ends
+
+* expanding   symbol:  ring_n.sym # of pins=4
+** sym_path: /foss/designs/tt_tsense/xschem/ring_n.sym
+** sch_path: /foss/designs/tt_tsense/xschem/ring_n.sch
+.subckt ring_n en out VDPWR VGND
+*.ipin en
+*.opin out
+*.iopin VDPWR
+*.iopin VGND
+xtie VGND VGND VDPWR VDPWR hi tie_lo sky130_fd_sc_hd__conb_1
+xg0 en r30 VGND VGND VDPWR VDPWR r0 sky130_fd_sc_hd__nand2_1
+xg1 hi r0 VGND VGND VDPWR VDPWR r1 sky130_fd_sc_hd__nand2_1
+xg2 hi r1 VGND VGND VDPWR VDPWR r2 sky130_fd_sc_hd__nand2_1
+xg3 hi r2 VGND VGND VDPWR VDPWR r3 sky130_fd_sc_hd__nand2_1
+xg4 hi r3 VGND VGND VDPWR VDPWR r4 sky130_fd_sc_hd__nand2_1
+xg5 hi r4 VGND VGND VDPWR VDPWR r5 sky130_fd_sc_hd__nand2_1
+xg6 hi r5 VGND VGND VDPWR VDPWR r6 sky130_fd_sc_hd__nand2_1
+xg7 hi r6 VGND VGND VDPWR VDPWR r7 sky130_fd_sc_hd__nand2_1
+xg8 hi r7 VGND VGND VDPWR VDPWR r8 sky130_fd_sc_hd__nand2_1
+xg9 hi r8 VGND VGND VDPWR VDPWR r9 sky130_fd_sc_hd__nand2_1
+xg10 hi r9 VGND VGND VDPWR VDPWR r10 sky130_fd_sc_hd__nand2_1
+xg11 hi r10 VGND VGND VDPWR VDPWR r11 sky130_fd_sc_hd__nand2_1
+xg12 hi r11 VGND VGND VDPWR VDPWR r12 sky130_fd_sc_hd__nand2_1
+xg13 hi r12 VGND VGND VDPWR VDPWR r13 sky130_fd_sc_hd__nand2_1
+xg14 hi r13 VGND VGND VDPWR VDPWR r14 sky130_fd_sc_hd__nand2_1
+xg15 hi r14 VGND VGND VDPWR VDPWR r15 sky130_fd_sc_hd__nand2_1
+xg16 hi r15 VGND VGND VDPWR VDPWR r16 sky130_fd_sc_hd__nand2_1
+xg17 hi r16 VGND VGND VDPWR VDPWR r17 sky130_fd_sc_hd__nand2_1
+xg18 hi r17 VGND VGND VDPWR VDPWR r18 sky130_fd_sc_hd__nand2_1
+xg19 hi r18 VGND VGND VDPWR VDPWR r19 sky130_fd_sc_hd__nand2_1
+xg20 hi r19 VGND VGND VDPWR VDPWR r20 sky130_fd_sc_hd__nand2_1
+xg21 hi r20 VGND VGND VDPWR VDPWR r21 sky130_fd_sc_hd__nand2_1
+xg22 hi r21 VGND VGND VDPWR VDPWR r22 sky130_fd_sc_hd__nand2_1
+xg23 hi r22 VGND VGND VDPWR VDPWR r23 sky130_fd_sc_hd__nand2_1
+xg24 hi r23 VGND VGND VDPWR VDPWR r24 sky130_fd_sc_hd__nand2_1
+xg25 hi r24 VGND VGND VDPWR VDPWR r25 sky130_fd_sc_hd__nand2_1
+xg26 hi r25 VGND VGND VDPWR VDPWR r26 sky130_fd_sc_hd__nand2_1
+xg27 hi r26 VGND VGND VDPWR VDPWR r27 sky130_fd_sc_hd__nand2_1
+xg28 hi r27 VGND VGND VDPWR VDPWR r28 sky130_fd_sc_hd__nand2_1
+xg29 hi r28 VGND VGND VDPWR VDPWR r29 sky130_fd_sc_hd__nand2_1
+xg30 hi r29 VGND VGND VDPWR VDPWR r30 sky130_fd_sc_hd__nand2_1
+xf0 r0 qb0 en VGND VGND VDPWR VDPWR q0 sky130_fd_sc_hd__dfrtp_1
+xqi0 q0 VGND VGND VDPWR VDPWR qb0 sky130_fd_sc_hd__inv_1
+xf1 q0 qb1 en VGND VGND VDPWR VDPWR q1 sky130_fd_sc_hd__dfrtp_1
+xqi1 q1 VGND VGND VDPWR VDPWR qb1 sky130_fd_sc_hd__inv_1
+xf2 q1 qb2 en VGND VGND VDPWR VDPWR q2 sky130_fd_sc_hd__dfrtp_1
+xqi2 q2 VGND VGND VDPWR VDPWR qb2 sky130_fd_sc_hd__inv_1
+xf3 q2 qb3 en VGND VGND VDPWR VDPWR q3 sky130_fd_sc_hd__dfrtp_1
+xqi3 q3 VGND VGND VDPWR VDPWR qb3 sky130_fd_sc_hd__inv_1
+xf4 q3 qb4 en VGND VGND VDPWR VDPWR q4 sky130_fd_sc_hd__dfrtp_1
+xqi4 q4 VGND VGND VDPWR VDPWR qb4 sky130_fd_sc_hd__inv_1
+xbo q4 VGND VGND VDPWR VDPWR out sky130_fd_sc_hd__buf_2
+.ends
+
+
+* expanding   symbol:  ring_p.sym # of pins=4
+** sym_path: /foss/designs/tt_tsense/xschem/ring_p.sym
+** sch_path: /foss/designs/tt_tsense/xschem/ring_p.sch
+.subckt ring_p en out VDPWR VGND
+*.ipin en
+*.opin out
+*.iopin VDPWR
+*.iopin VGND
+xie en VGND VGND VDPWR VDPWR enb sky130_fd_sc_hd__inv_1
+xtie VGND VGND VDPWR VDPWR tie_hi lo sky130_fd_sc_hd__conb_1
+xg0 enb r30 VGND VGND VDPWR VDPWR r0 sky130_fd_sc_hd__nor2_1
+xg1 lo r0 VGND VGND VDPWR VDPWR r1 sky130_fd_sc_hd__nor2_1
+xg2 lo r1 VGND VGND VDPWR VDPWR r2 sky130_fd_sc_hd__nor2_1
+xg3 lo r2 VGND VGND VDPWR VDPWR r3 sky130_fd_sc_hd__nor2_1
+xg4 lo r3 VGND VGND VDPWR VDPWR r4 sky130_fd_sc_hd__nor2_1
+xg5 lo r4 VGND VGND VDPWR VDPWR r5 sky130_fd_sc_hd__nor2_1
+xg6 lo r5 VGND VGND VDPWR VDPWR r6 sky130_fd_sc_hd__nor2_1
+xg7 lo r6 VGND VGND VDPWR VDPWR r7 sky130_fd_sc_hd__nor2_1
+xg8 lo r7 VGND VGND VDPWR VDPWR r8 sky130_fd_sc_hd__nor2_1
+xg9 lo r8 VGND VGND VDPWR VDPWR r9 sky130_fd_sc_hd__nor2_1
+xg10 lo r9 VGND VGND VDPWR VDPWR r10 sky130_fd_sc_hd__nor2_1
+xg11 lo r10 VGND VGND VDPWR VDPWR r11 sky130_fd_sc_hd__nor2_1
+xg12 lo r11 VGND VGND VDPWR VDPWR r12 sky130_fd_sc_hd__nor2_1
+xg13 lo r12 VGND VGND VDPWR VDPWR r13 sky130_fd_sc_hd__nor2_1
+xg14 lo r13 VGND VGND VDPWR VDPWR r14 sky130_fd_sc_hd__nor2_1
+xg15 lo r14 VGND VGND VDPWR VDPWR r15 sky130_fd_sc_hd__nor2_1
+xg16 lo r15 VGND VGND VDPWR VDPWR r16 sky130_fd_sc_hd__nor2_1
+xg17 lo r16 VGND VGND VDPWR VDPWR r17 sky130_fd_sc_hd__nor2_1
+xg18 lo r17 VGND VGND VDPWR VDPWR r18 sky130_fd_sc_hd__nor2_1
+xg19 lo r18 VGND VGND VDPWR VDPWR r19 sky130_fd_sc_hd__nor2_1
+xg20 lo r19 VGND VGND VDPWR VDPWR r20 sky130_fd_sc_hd__nor2_1
+xg21 lo r20 VGND VGND VDPWR VDPWR r21 sky130_fd_sc_hd__nor2_1
+xg22 lo r21 VGND VGND VDPWR VDPWR r22 sky130_fd_sc_hd__nor2_1
+xg23 lo r22 VGND VGND VDPWR VDPWR r23 sky130_fd_sc_hd__nor2_1
+xg24 lo r23 VGND VGND VDPWR VDPWR r24 sky130_fd_sc_hd__nor2_1
+xg25 lo r24 VGND VGND VDPWR VDPWR r25 sky130_fd_sc_hd__nor2_1
+xg26 lo r25 VGND VGND VDPWR VDPWR r26 sky130_fd_sc_hd__nor2_1
+xg27 lo r26 VGND VGND VDPWR VDPWR r27 sky130_fd_sc_hd__nor2_1
+xg28 lo r27 VGND VGND VDPWR VDPWR r28 sky130_fd_sc_hd__nor2_1
+xg29 lo r28 VGND VGND VDPWR VDPWR r29 sky130_fd_sc_hd__nor2_1
+xg30 lo r29 VGND VGND VDPWR VDPWR r30 sky130_fd_sc_hd__nor2_1
+xf0 r0 qb0 en VGND VGND VDPWR VDPWR q0 sky130_fd_sc_hd__dfrtp_1
+xqi0 q0 VGND VGND VDPWR VDPWR qb0 sky130_fd_sc_hd__inv_1
+xf1 q0 qb1 en VGND VGND VDPWR VDPWR q1 sky130_fd_sc_hd__dfrtp_1
+xqi1 q1 VGND VGND VDPWR VDPWR qb1 sky130_fd_sc_hd__inv_1
+xf2 q1 qb2 en VGND VGND VDPWR VDPWR q2 sky130_fd_sc_hd__dfrtp_1
+xqi2 q2 VGND VGND VDPWR VDPWR qb2 sky130_fd_sc_hd__inv_1
+xf3 q2 qb3 en VGND VGND VDPWR VDPWR q3 sky130_fd_sc_hd__dfrtp_1
+xqi3 q3 VGND VGND VDPWR VDPWR qb3 sky130_fd_sc_hd__inv_1
+xf4 q3 qb4 en VGND VGND VDPWR VDPWR q4 sky130_fd_sc_hd__dfrtp_1
+xqi4 q4 VGND VGND VDPWR VDPWR qb4 sky130_fd_sc_hd__inv_1
+xbo q4 VGND VGND VDPWR VDPWR out sky130_fd_sc_hd__buf_2
+.ends
+
+
+* expanding   symbol:  ring_d.sym # of pins=4
+** sym_path: /foss/designs/tt_tsense/xschem/ring_d.sym
+** sch_path: /foss/designs/tt_tsense/xschem/ring_d.sch
+.subckt ring_d en out VDPWR VGND
+*.ipin en
+*.opin out
+*.iopin VDPWR
+*.iopin VGND
+xg0 en r15 VGND VGND VDPWR VDPWR r0 sky130_fd_sc_hd__nand2_1
+xd1 r0 VGND VGND VDPWR VDPWR r1 sky130_fd_sc_hd__dlygate4sd3_1
+xd2 r1 VGND VGND VDPWR VDPWR r2 sky130_fd_sc_hd__dlygate4sd3_1
+xd3 r2 VGND VGND VDPWR VDPWR r3 sky130_fd_sc_hd__dlygate4sd3_1
+xd4 r3 VGND VGND VDPWR VDPWR r4 sky130_fd_sc_hd__dlygate4sd3_1
+xd5 r4 VGND VGND VDPWR VDPWR r5 sky130_fd_sc_hd__dlygate4sd3_1
+xd6 r5 VGND VGND VDPWR VDPWR r6 sky130_fd_sc_hd__dlygate4sd3_1
+xd7 r6 VGND VGND VDPWR VDPWR r7 sky130_fd_sc_hd__dlygate4sd3_1
+xd8 r7 VGND VGND VDPWR VDPWR r8 sky130_fd_sc_hd__dlygate4sd3_1
+xd9 r8 VGND VGND VDPWR VDPWR r9 sky130_fd_sc_hd__dlygate4sd3_1
+xd10 r9 VGND VGND VDPWR VDPWR r10 sky130_fd_sc_hd__dlygate4sd3_1
+xd11 r10 VGND VGND VDPWR VDPWR r11 sky130_fd_sc_hd__dlygate4sd3_1
+xd12 r11 VGND VGND VDPWR VDPWR r12 sky130_fd_sc_hd__dlygate4sd3_1
+xd13 r12 VGND VGND VDPWR VDPWR r13 sky130_fd_sc_hd__dlygate4sd3_1
+xd14 r13 VGND VGND VDPWR VDPWR r14 sky130_fd_sc_hd__dlygate4sd3_1
+xd15 r14 VGND VGND VDPWR VDPWR r15 sky130_fd_sc_hd__dlygate4sd3_1
+xf0 r0 qb0 en VGND VGND VDPWR VDPWR q0 sky130_fd_sc_hd__dfrtp_1
+xqi0 q0 VGND VGND VDPWR VDPWR qb0 sky130_fd_sc_hd__inv_1
+xf1 q0 qb1 en VGND VGND VDPWR VDPWR q1 sky130_fd_sc_hd__dfrtp_1
+xqi1 q1 VGND VGND VDPWR VDPWR qb1 sky130_fd_sc_hd__inv_1
+xf2 q1 qb2 en VGND VGND VDPWR VDPWR q2 sky130_fd_sc_hd__dfrtp_1
+xqi2 q2 VGND VGND VDPWR VDPWR qb2 sky130_fd_sc_hd__inv_1
+xf3 q2 qb3 en VGND VGND VDPWR VDPWR q3 sky130_fd_sc_hd__dfrtp_1
+xqi3 q3 VGND VGND VDPWR VDPWR qb3 sky130_fd_sc_hd__inv_1
+xbo q3 VGND VGND VDPWR VDPWR out sky130_fd_sc_hd__buf_2
+.ends
+
+.end

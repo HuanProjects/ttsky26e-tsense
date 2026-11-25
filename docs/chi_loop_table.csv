@@ -1,0 +1,5 @@
+temp_C,corner,vdd_V,chi_nom,chi_loop_half,delta_half,chi_loop_two_slope,delta_two_slope,source
+-20,tt,1.80,0.1265,0.1590,0.0325,0.0542,-0.0723,tog10_-20 (chop average) + pvt8/i3_table.csv
+25,tt,1.80,0.0970,0.1184,0.0214,0.1163,0.0192,tog10 (chop average) + pvt8/i3_table.csv
+100,tt,1.80,0.0647,0.0716,0.0069,0.0810,0.0163,tog10_100 (chop average) + pvt8/i3_table.csv
+-20,ss,1.71,0.1312,0.1642,0.0330,0.0176,-0.1136,chi11_ss (chop A only)

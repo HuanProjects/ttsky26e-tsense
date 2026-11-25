@@ -1,0 +1,32 @@
+** sch_path: /foss/designs/tt_tsense/xschem/swdrv.sch
+**.subckt swdrv ich_sel i3_sel chop_sel ich_on ich_onb ich_dump i3_on i3_onb i3_dump swa swb chop chopb VDPWR VGND
+*.ipin ich_sel
+*.ipin i3_sel
+*.ipin chop_sel
+*.opin ich_on
+*.opin ich_onb
+*.opin ich_dump
+*.opin i3_on
+*.opin i3_onb
+*.opin i3_dump
+*.opin swa
+*.opin swb
+*.opin chop
+*.opin chopb
+*.iopin VDPWR
+*.iopin VGND
+xichi ich_sel VGND VGND VDPWR VDPWR ich_selb sky130_fd_sc_hd__inv_1
+xichn1 ich_sel ich_dump VGND VGND VDPWR VDPWR ich_on sky130_fd_sc_hd__nor2_1
+xichn2 ich_selb ich_on VGND VGND VDPWR VDPWR ich_dump sky130_fd_sc_hd__nor2_1
+xichib ich_on VGND VGND VDPWR VDPWR ich_onb sky130_fd_sc_hd__inv_1
+xi3i i3_sel VGND VGND VDPWR VDPWR i3_selb sky130_fd_sc_hd__inv_1
+xi3n1 i3_sel i3_dump VGND VGND VDPWR VDPWR i3_on sky130_fd_sc_hd__nor2_1
+xi3n2 i3_selb i3_on VGND VGND VDPWR VDPWR i3_dump sky130_fd_sc_hd__nor2_1
+xi3ib i3_on VGND VGND VDPWR VDPWR i3_onb sky130_fd_sc_hd__inv_1
+xci chop_sel VGND VGND VDPWR VDPWR chop_selb sky130_fd_sc_hd__inv_1
+xcn1 chop_sel swb VGND VGND VDPWR VDPWR swa sky130_fd_sc_hd__nor2_1
+xcn2 chop_selb swa VGND VGND VDPWR VDPWR swb sky130_fd_sc_hd__nor2_1
+xca1 chop_sel chop VGND VGND VDPWR VDPWR chopb sky130_fd_sc_hd__nand2_1
+xca2 chop_selb chopb VGND VGND VDPWR VDPWR chop sky130_fd_sc_hd__nand2_1
+**.ends
+.end

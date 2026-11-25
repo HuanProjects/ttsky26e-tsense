@@ -1,0 +1,29 @@
+.DS_Store
+.idea
+.vscode
+*.vcd
+runs
+tt_submission
+src/user_config.tcl
+test/sim_build
+test/__pycache__/
+test/results.xml
+test/gate_level_netlist.v
+
+# --- tt_tsense additions ---
+# Simulation run outputs: only the frozen netlists are tracked (freeze records, lvs.sh)
+xschem/simulation/*
+!xschem/simulation/bgr.spice
+!xschem/simulation/ota2s.spice
+!xschem/simulation/osc_core.spice
+!xschem/simulation/swdrv.spice
+!xschem/simulation/readout_glue.spice
+!xschem/simulation/ring3.spice
+# Magic extraction / check outputs
+mag/lvs/
+mag/pex/
+*.ext
+*.lyrdb
+*.log
+# Python caches
+__pycache__/

@@ -1,0 +1,27 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1794461783
+<< metal1 >>
+rect 800 0 1000 120
+<< metal2 >>
+rect 680 2920 840 7429
+rect -200 2720 840 2920
+rect 1680 -20 1840 11780
+rect 2680 2069 2840 12060
+rect 3680 5960 3840 6389
+rect 3680 5800 4880 5960
+use ota2s_prow_arr  ota2s_prow_arr_0
+timestamp 1794460824
+transform 1 0 0 0 1 0
+box -50 -50 4730 11810
+<< labels >>
+rlabel metal2 -200 2720 -40 2920 0 tail
+port 1 nsew
+rlabel metal2 2680 11900 2840 12060 0 OUT
+port 2 nsew
+rlabel metal2 4720 5800 4880 5960 0 IBIAS
+port 3 nsew
+rlabel metal1 800 0 1000 120 0 VDPWR
+port 4 nsew
+<< end >>

@@ -1,0 +1,263 @@
+** sch_path: /foss/designs/tt_tsense/xschem/bgr.sch
+**.subckt bgr ich_on ich_onb ich_dump i3_dump i3_onb i3_on VDPWR vref ich iptat_mon chopb chop veb3 VGND ib_cmp1 ib_cmp2 swa swb
+*+ su
+*.iopin swb
+*.iopin VDPWR
+*.iopin VGND
+*.iopin vref
+*.iopin veb3
+*.iopin ich
+*.iopin iptat_mon
+*.iopin ib_cmp1
+*.iopin ib_cmp2
+*.iopin swa
+*.iopin chop
+*.iopin chopb
+*.iopin ich_on
+*.iopin ich_onb
+*.iopin ich_dump
+*.iopin i3_on
+*.iopin i3_onb
+*.iopin i3_dump
+*.iopin su
+xcore vpg VDPWR i3b vref ichb ich vb iptat_mon veb3 VGND va ibias ib_cmp1 ib_cmp2 su bg_core
+xota inp inn vpg VDPWR VGND ibias chop chopb ota2s
+XS1 va swa inn VGND sky130_fd_pr__nfet_01v8_lvt L=0.5 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0
++ sd=0 mult=1
+XS2 vb swa inp VGND sky130_fd_pr__nfet_01v8_lvt L=0.5 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0
++ sd=0 mult=1
+XS3 va swb inp VGND sky130_fd_pr__nfet_01v8_lvt L=0.5 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0
++ sd=0 mult=1
+XS4 vb swb inn VGND sky130_fd_pr__nfet_01v8_lvt L=0.5 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0
++ sd=0 mult=1
+XS_ichon_n ichb ich_on ich VGND sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0
++ sb=0 sd=0 mult=1
+XS_ichon_p ichb ich_onb ich VDPWR sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725
++ sa=0 sb=0 sd=0 mult=1
+XS_ichdump ichb ich_dump VGND VGND sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0
++ sb=0 sd=0 mult=1
+XS_i3on_n i3b i3_on vref VGND sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0
++ sd=0 mult=1
+XS_i3on_p i3b i3_onb vref VDPWR sky130_fd_pr__pfet_01v8 L=0.5 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0
++ sb=0 sd=0 mult=1
+XS_i3dump i3b i3_dump VGND VGND sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0
++ sd=0 mult=1
+**.ends
+
+* expanding   symbol:  bg_core.sym # of pins=15
+** sym_path: /foss/designs/tt_tsense/xschem/bg_core.sym
+** sch_path: /foss/designs/tt_tsense/xschem/bg_core.sch
+.subckt bg_core vpg VDPWR i3b vref ichb ich vb iptat_mon veb3 VGND va ibias ib_cmp1 ib_cmp2 su
+*.iopin va
+*.iopin vb
+*.iopin vref
+*.iopin veb3
+*.iopin vpg
+*.iopin i3b
+*.iopin VDPWR
+*.iopin ichb
+*.iopin ich
+*.iopin iptat_mon
+*.iopin ibias
+*.iopin ib_cmp1
+*.iopin ib_cmp2
+*.iopin VGND
+*.iopin su
+x1 vpg VDPWR i3b vref ichb ich vb iptat_mon nb va bg_mirror
+x2 vb vref veb3 VGND eb2 bg_rrow
+x3 va veb3 eb2 VGND bg_pnp
+XMNB1 nb nb VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0 sd=0
++ mult=1
+XMNB2 ibias nb VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0 sd=0
++ mult=1
+XMNB3 ib_cmp1 nb VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0
++ sd=0 mult=4 m=4
+XMNB4 ib_cmp2 nb VGND VGND sky130_fd_pr__nfet_01v8 L=8 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0
++ sd=0 mult=4 m=4
+xsu VDPWR vref vpg su VGND nb bg_su
+.ends
+
+
+* expanding   symbol:  ota2s.sym # of pins=8
+** sym_path: /foss/designs/tt_tsense/xschem/ota2s.sym
+** sch_path: /foss/designs/tt_tsense/xschem/ota2s.sch
+.subckt ota2s INP INN OUT VDPWR VGND IBIAS CHOP CHOPB
+*.ipin INN
+*.ipin INP
+*.ipin IBIAS
+*.opin OUT
+*.iopin VDPWR
+*.iopin VGND
+*.ipin CHOPB
+*.ipin CHOP
+XMREF IBIAS IBIAS VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
++ sb=0 sd=0 mult=1
+XMTAIL tail IBIAS VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
++ sb=0 sd=0 mult=2 m=2
+XMP1 d1 INN tail VDPWR sky130_fd_pr__pfet_01v8_lvt L=6 W=25 nf=1 ad=7.25 as=7.25 pd=50.58 ps=50.58 nrd=0.0116 nrs=0.0116 sa=0 sb=0
++ sd=0 mult=24 m=24
+XMP2 x1 INP tail VDPWR sky130_fd_pr__pfet_01v8_lvt L=6 W=25 nf=1 ad=7.25 as=7.25 pd=50.58 ps=50.58 nrd=0.0116 nrs=0.0116 sa=0 sb=0
++ sd=0 mult=24 m=24
+XMN1 d1 g12 VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XMN2 x1 g12 VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XMP3 OUT IBIAS VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0 sb=0
++ sd=0 mult=6 m=6
+XMN3 OUT g3 VGND VGND sky130_fd_pr__nfet_01v8 L=1 W=7 nf=1 ad=2.03 as=2.03 pd=14.58 ps=14.58 nrd=0.0414285714285714
++ nrs=0.0414285714285714 sa=0 sb=0 sd=0 mult=1
+XRZ1 net1 g3 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ2 net2 net1 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ3 net3 net2 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ4 net4 net3 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ5 net5 net4 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ6 cz net5 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XCC cz OUT sky130_fd_pr__cap_mim_m3_1 W=25 L=25 MF=8 m=8
+XDP tail VDPWR tail VDPWR sky130_fd_pr__pfet_01v8_lvt L=6 W=25 nf=1 ad=7.25 as=7.25 pd=50.58 ps=50.58 nrd=0.0116 nrs=0.0116 sa=0
++ sb=0 sd=0 mult=8 m=8
+XDNA d1 VGND VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XDNB x1 VGND VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XDB VDPWR VDPWR VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0 sb=0
++ sd=0 mult=2 m=2
+XRD1 VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRD2 VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XSD1 d1 CHOPB g12 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+XSD2 x1 CHOP g12 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+XSG2 g3 CHOP d1 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+XSG1 x1 CHOPB g3 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+.ends
+
+
+* expanding   symbol:  bg_mirror.sym # of pins=10
+** sym_path: /foss/designs/tt_tsense/xschem/bg_mirror.sym
+** sch_path: /foss/designs/tt_tsense/xschem/bg_mirror.sch
+.subckt bg_mirror vpg VDPWR d3b d3a d4b d4a d2 d7 d5 d1
+*.iopin vpg
+*.iopin VDPWR
+*.iopin d1
+*.iopin d2
+*.iopin d3a
+*.iopin d3b
+*.iopin d4a
+*.iopin d4b
+*.iopin d7
+*.iopin d5
+XMP1 d1 vpg VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=8.8 nf=1 ad=2.552 as=2.552 pd=18.18 ps=18.18 nrd=0.0329545454545455
++ nrs=0.0329545454545455 sa=0 sb=0 sd=0 mult=4 m=4
+XMP2 d2 vpg VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=8.8 nf=1 ad=2.552 as=2.552 pd=18.18 ps=18.18 nrd=0.0329545454545455
++ nrs=0.0329545454545455 sa=0 sb=0 sd=0 mult=4 m=4
+XMP3A d3a vpg VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=8.8 nf=1 ad=2.552 as=2.552 pd=18.18 ps=18.18 nrd=0.0329545454545455
++ nrs=0.0329545454545455 sa=0 sb=0 sd=0 mult=2 m=2
+XMP3B d3b vpg VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=8.8 nf=1 ad=2.552 as=2.552 pd=18.18 ps=18.18 nrd=0.0329545454545455
++ nrs=0.0329545454545455 sa=0 sb=0 sd=0 mult=2 m=2
+XMP4A d4a vpg VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=8.8 nf=1 ad=2.552 as=2.552 pd=18.18 ps=18.18 nrd=0.0329545454545455
++ nrs=0.0329545454545455 sa=0 sb=0 sd=0 mult=1
+XMP4B d4b vpg VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=8.8 nf=1 ad=2.552 as=2.552 pd=18.18 ps=18.18 nrd=0.0329545454545455
++ nrs=0.0329545454545455 sa=0 sb=0 sd=0 mult=1
+XMP7 d7 vpg VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=8.8 nf=1 ad=2.552 as=2.552 pd=18.18 ps=18.18 nrd=0.0329545454545455
++ nrs=0.0329545454545455 sa=0 sb=0 sd=0 mult=2 m=2
+XMP5 d5 vpg VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=8.8 nf=1 ad=2.552 as=2.552 pd=18.18 ps=18.18 nrd=0.0329545454545455
++ nrs=0.0329545454545455 sa=0 sb=0 sd=0 mult=2 m=2
+.ends
+
+
+* expanding   symbol:  bg_rrow.sym # of pins=5
+** sym_path: /foss/designs/tt_tsense/xschem/bg_rrow.sym
+** sch_path: /foss/designs/tt_tsense/xschem/bg_rrow.sch
+.subckt bg_rrow vb vref veb3 VGND eb2
+*.iopin vb
+*.iopin eb2
+*.iopin vref
+*.iopin veb3
+*.iopin VGND
+XR1_1 eb2 net1 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR1_2 net1 net2 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR1_3 net2 net3 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR1_4 net3 vb VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[39] r3n[38] vref VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[38] r3n[37] r3n[38] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[37] r3n[36] r3n[37] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[36] r3n[35] r3n[36] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[35] r3n[34] r3n[35] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[34] r3n[33] r3n[34] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[33] r3n[32] r3n[33] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[32] r3n[31] r3n[32] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[31] r3n[30] r3n[31] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[30] r3n[29] r3n[30] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[29] r3n[28] r3n[29] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[28] r3n[27] r3n[28] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[27] r3n[26] r3n[27] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[26] r3n[25] r3n[26] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[25] r3n[24] r3n[25] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[24] r3n[23] r3n[24] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[23] r3n[22] r3n[23] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[22] r3n[21] r3n[22] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[21] r3n[20] r3n[21] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[20] r3n[19] r3n[20] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[19] r3n[18] r3n[19] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[18] r3n[17] r3n[18] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[17] r3n[16] r3n[17] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[16] r3n[15] r3n[16] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[15] r3n[14] r3n[15] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[14] r3n[13] r3n[14] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[13] r3n[12] r3n[13] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[12] r3n[11] r3n[12] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[11] r3n[10] r3n[11] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[10] r3n[9] r3n[10] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[9] r3n[8] r3n[9] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[8] r3n[7] r3n[8] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[7] r3n[6] r3n[7] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[6] r3n[5] r3n[6] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[5] r3n[4] r3n[5] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[4] r3n[3] r3n[4] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[3] r3n[2] r3n[3] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[2] r3n[1] r3n[2] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[1] r3n[0] r3n[1] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XR3[0] veb3 r3n[0] VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRD[3] VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRD[2] VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRD[1] VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRD[0] VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+.ends
+
+
+* expanding   symbol:  bg_pnp.sym # of pins=4
+** sym_path: /foss/designs/tt_tsense/xschem/bg_pnp.sym
+** sch_path: /foss/designs/tt_tsense/xschem/bg_pnp.sch
+.subckt bg_pnp va veb3 eb2 VGND
+*.iopin va
+*.iopin eb2
+*.iopin veb3
+*.iopin VGND
+XQ1 VGND VGND va sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQ2 VGND VGND eb2 sky130_fd_pr__pnp_05v5_W3p40L3p40 m=8 mult=8
+XQ3 VGND VGND veb3 sky130_fd_pr__pnp_05v5_W3p40L3p40 m=1 mult=1
+XQD VGND VGND VGND sky130_fd_pr__pnp_05v5_W3p40L3p40 m=15 mult=15
+.ends
+
+
+* expanding   symbol:  bg_su.sym # of pins=6
+** sym_path: /foss/designs/tt_tsense/xschem/bg_su.sym
+** sch_path: /foss/designs/tt_tsense/xschem/bg_su.sch
+.subckt bg_su VDPWR vref vpg su VGND nb
+*.iopin vref
+*.iopin VGND
+*.iopin vpg
+*.iopin VDPWR
+*.iopin su
+*.iopin nb
+XMSU1 su vref VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=20 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMSU3 su nb VGND VGND sky130_fd_pr__nfet_01v8 L=1 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+XMSU2 vpg su VGND VGND sky130_fd_pr__nfet_01v8 L=10 W=0.42 nf=1 ad=0.1218 as=0.1218 pd=1.42 ps=1.42 nrd=0.69047619047619
++ nrs=0.69047619047619 sa=0 sb=0 sd=0 mult=1
+.ends
+
+.end

@@ -1,0 +1,40 @@
+magic
+tech sky130A
+timestamp 1794465364
+<< checkpaint >>
+rect -630 -630 11494 5770
+<< metal3 >>
+rect 0 0 10864 5140
+use sky130_fd_pr__cap_mim_m3_1_R3YF9Y  XCC_c0r0
+timestamp 0
+transform 1 0 1358 0 1 1270
+box -1358 -1270 1358 1270
+use sky130_fd_pr__cap_mim_m3_1_R3YF9Y  XCC_c0r1
+timestamp 0
+transform 1 0 1358 0 1 3870
+box -1358 -1270 1358 1270
+use sky130_fd_pr__cap_mim_m3_1_R3YF9Y  XCC_c1r0
+timestamp 0
+transform 1 0 4074 0 1 1270
+box -1358 -1270 1358 1270
+use sky130_fd_pr__cap_mim_m3_1_R3YF9Y  XCC_c1r1
+timestamp 0
+transform 1 0 4074 0 1 3870
+box -1358 -1270 1358 1270
+use sky130_fd_pr__cap_mim_m3_1_R3YF9Y  XCC_c2r0
+timestamp 0
+transform 1 0 6790 0 1 1270
+box -1358 -1270 1358 1270
+use sky130_fd_pr__cap_mim_m3_1_R3YF9Y  XCC_c2r1
+timestamp 0
+transform 1 0 6790 0 1 3870
+box -1358 -1270 1358 1270
+use sky130_fd_pr__cap_mim_m3_1_R3YF9Y  XCC_c3r0
+timestamp 0
+transform 1 0 9506 0 1 1270
+box -1358 -1270 1358 1270
+use sky130_fd_pr__cap_mim_m3_1_R3YF9Y  XCC_c3r1
+timestamp 0
+transform 1 0 9506 0 1 3870
+box -1358 -1270 1358 1270
+<< end >>

@@ -1,0 +1,12 @@
+* ota2s_prow: layout-only cell for a standalone LVS. The device lines are copied unchanged from the frozen ota2s
+* subckt in ../xschem/simulation/bgr.spice (= ota2s.spice, sha256 71510555...); only the subckt wrapper is added.
+.subckt ota2s_prow IBIAS tail OUT VDPWR
+XMREF IBIAS IBIAS VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
++ sb=0 sd=0 mult=1
+XMTAIL tail IBIAS VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0
++ sb=0 sd=0 mult=2 m=2
+XMP3 OUT IBIAS VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0 sb=0
++ sd=0 mult=6 m=6
+XDB VDPWR VDPWR VDPWR VDPWR sky130_fd_pr__pfet_01v8 L=4 W=20 nf=1 ad=5.8 as=5.8 pd=40.58 ps=40.58 nrd=0.0145 nrs=0.0145 sa=0 sb=0
++ sd=0 mult=2 m=2
+.ends

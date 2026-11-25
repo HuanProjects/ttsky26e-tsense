@@ -1,0 +1,23 @@
+* tt_um_huanprojects_tsense: the tile, for LVS (spec section 8 / M8). Ports as in src/project.v. Built from the frozen
+* blocks (bgr, osc_core, swdrv; readout_glue + ring3 through dig_top), the V_REF decap and the two analog-pin
+* monitor switches (montg). P4's drain is bgr's `ich` pin: the net is vcap.
+* uses: montg dig_top
+.subckt tt_um_huanprojects_tsense clk ena rst_n ua[0] ua[1] ua[2] ua[3] ua[4] ua[5] ua[6] ua[7]
++ ui_in[0] ui_in[1] ui_in[2] ui_in[3] ui_in[4] ui_in[5] ui_in[6] ui_in[7]
++ uio_in[0] uio_in[1] uio_in[2] uio_in[3] uio_in[4] uio_in[5] uio_in[6] uio_in[7]
++ uio_oe[0] uio_oe[1] uio_oe[2] uio_oe[3] uio_oe[4] uio_oe[5] uio_oe[6] uio_oe[7]
++ uio_out[0] uio_out[1] uio_out[2] uio_out[3] uio_out[4] uio_out[5] uio_out[6] uio_out[7]
++ uo_out[0] uo_out[1] uo_out[2] uo_out[3] uo_out[4] uo_out[5] uo_out[6] uo_out[7] VGND VDPWR
+xbgr ich_on ich_onb ich_dump i3_dump i3_onb i3_on VDPWR vref vcap iptat_mon chopb chop veb3 VGND ib_cmp1 ib_cmp2
++ swa swb su bgr
+xosc vref veb3 thr_sel thr_selb osc_en osc_enb ib_cmp1 ib_cmp2 vcap cmp_raw rst VDPWR VGND osc_core
+XCdec vref VGND sky130_fd_pr__cap_mim_m3_1 W=22.17 L=22.17 MF=2 m=2
+xmon0 vref ua[0] vref_mon_en vref_mon_enb VDPWR VGND montg
+xmon1 iptat_mon ua[1] iptat_mon_en iptat_mon_enb VDPWR VGND montg
+xsw ich_sel i3_sel chop_sel ich_on ich_onb ich_dump i3_on i3_onb i3_dump swa swb chop chopb VDPWR VGND swdrv
+xdig ui_in[0] ui_in[1] ui_in[2] ui_in[3] ui_in[4] ui_in[5] ui_in[6] ui_in[7] rst cmp_raw su osc_en osc_enb thr_sel
++ thr_selb vref_mon_en vref_mon_enb iptat_mon_en iptat_mon_enb ich_sel chop_sel i3_sel
++ uo_out[0] uo_out[1] uo_out[2] uo_out[3] uo_out[4] uo_out[5] uo_out[6] uo_out[7]
++ uio_out[0] uio_out[1] uio_out[2] uio_out[3] uio_out[4] uio_out[5] uio_out[6] uio_out[7]
++ uio_oe[0] uio_oe[1] uio_oe[2] uio_oe[3] uio_oe[4] uio_oe[5] uio_oe[6] uio_oe[7] VDPWR VGND dig_top
+.ends

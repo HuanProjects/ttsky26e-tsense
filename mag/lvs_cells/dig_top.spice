@@ -1,0 +1,11 @@
+* dig_top: the layout block that holds readout_glue and ring3, placed and routed together (OpenROAD, ../pnr). Built from
+* the two frozen subckts only; ring_en (readout_glue's output, ring3's input) stays inside.
+.subckt dig_top ui0 ui1 ui2 ui3 ui4 ui5 ui6 ui7 rst cmp_raw su osc_en osc_enb thr_sel thr_selb vref_mon_en vref_mon_enb
++ iptat_mon_en iptat_mon_enb ich_sel chop_sel i3_sel uo0 uo1 uo2 uo3 uo4 uo5 uo6 uo7 uio_out0 uio_out1 uio_out2 uio_out3
++ uio_out4 uio_out5 uio_out6 uio_out7 uio_oe0 uio_oe1 uio_oe2 uio_oe3 uio_oe4 uio_oe5 uio_oe6 uio_oe7 VDPWR VGND
+xglue ui0 ui1 ui2 ui3 ui4 ui5 ui6 ui7 rst cmp_raw su osc_en osc_enb thr_sel thr_selb vref_mon_en vref_mon_enb
++ iptat_mon_en iptat_mon_enb ich_sel chop_sel ring_en i3_sel uo0 uo2 uo4 uo5 uo7 uio_out0 uio_out1 uio_out2 uio_out3
++ uio_out4 uio_out5 uio_out6 uio_out7 uio_oe0 uio_oe1 uio_oe2 uio_oe3 uio_oe4 uio_oe5 uio_oe6 uio_oe7 VDPWR VGND
++ readout_glue
+xring ring_en uo1 uo3 uo6 VDPWR VGND ring3
+.ends

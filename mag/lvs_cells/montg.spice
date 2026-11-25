@@ -1,0 +1,6 @@
+* montg: the analog-pin monitor switch (tile level), one per used analog pin: vref -> ua[0] (en = vref_mon_en) and
+* iptat_mon -> ua[1] (en = iptat_mon_en). a = inner net, b = pad. Sized in results_m7 section 4 (tb_montg2).
+.subckt montg a b en enb VDPWR VGND
+XMN a en b VGND sky130_fd_pr__nfet_01v8_lvt L=1 W=0.42 nf=1 m=1
+XMP b enb a VDPWR sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 m=1
+.ends

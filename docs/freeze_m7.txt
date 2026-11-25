@@ -1,0 +1,71 @@
+# M7 freeze record (readout_glue, ring3) and the tile
+pdk: ciel/sky130/versions/f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7/sky130A
+simulator: ngspice-46 : Circuit level simulation program
+readout_glue pins: ui0 ui1 ui2 ui3 ui4 ui5 ui6 ui7 rst cmp_raw su osc_en osc_enb thr_sel thr_selb vref_mon_en vref_mon_enb iptat_mon_en iptat_mon_enb ich_sel chop_sel ring_en i3_sel uo0 uo2 uo4 uo5 uo7 uio_out0..7 uio_oe0..7 VDPWR VGND
+ring3 pins: ring_en uo1 uo3 uo6 VDPWR VGND
+frozen inputs: simulation/bgr.spice (freeze_m5.txt), simulation/osc_core.spice and simulation/swdrv.spice (freeze_m6.txt)
+tile top: tt_um_huanprojects_tsense, ports as in src/project.v
+
+## cells and netlists
+bbadd26e3100f3f85e3d72fab518a1586876316304a80553e79490fbe0774045  readout_glue.sch
+61556843ffe061db500d99c2fc23c51aa26022fef80f7c594fd7caa597b72e27  ring_n.sch
+121e3b538fccf86ab29c940d49b1854b6415496eff4c1f8b57a169432093b71c  ring_p.sch
+4207d0266b8b80bc9e2d5cdd1d1b9c1d77486a2d78894d6477c0bebdff04abad  ring_d.sch
+02a34aabec1eb35a89bd9d28fc9f52d5c86a785776375a7796c04bfc5a0cc56c  ring3.sch
+c0d385d1d7f0ebdeed69a6be808773a5c02719d455ad87fe4b6e130c7f683094  readout_glue.sym
+1fd67b4f5db9571fc0a64370f39d2a89da803c1becfc0a1b62b638bc2fed3c9e  ring_n.sym
+1fd67b4f5db9571fc0a64370f39d2a89da803c1becfc0a1b62b638bc2fed3c9e  ring_p.sym
+1fd67b4f5db9571fc0a64370f39d2a89da803c1becfc0a1b62b638bc2fed3c9e  ring_d.sym
+b969362f22eaf9500ea2bdbfcaa3208dcb661ba616a44cbd4af2b5d8eb111e03  ring3.sym
+e8057fa2c48376e6c3a290e91c9d0e2aaf086e0e3946d66270b64d9ea8833f0a  simulation/readout_glue.spice
+61db6793a112743e411d7ab1c9d0d001d6b1e8785a4d9c38f6038e0ad91a6e24  simulation/ring3.spice
+
+## benches and runners
+b604b888e7bbb26ff446bb42fb24b07a489b38822a6c2602739d570a1335ed96  tb_readout_glue.sch
+c70b61637fe8617967b2323d21c74dd36bb234082078bf5ec0f0880d05e13fc7  tb_ring3.sch
+17e75c0aa6e05407662c8c1be2ec08d465f51d24846ea198d0c8bcb63c33ac6c  glue13.py
+5779b11922958bf27b15f84e8dc230f257decec6bc9ee7f57949c30113bff1d8  stress13.py
+417af89a8cba4b30e69ab9a45aeac1c58e4b80bb7d72ae3caa98a4b128401e18  ring14.py
+64b2e7acf47d3960c6a6b4768b7eed11847bfa93633323533eafa007030f092f  tile15.py
+
+## tile netlists for LVS
+e0577f6fcb264c8313d9e8c93e31ed9da47c8e326f3bde519c2f429bc7fd29f2  ../mag/lvs_cells/tt_um_huanprojects_tsense.spice
+4b8d8768f9516cc81f8c7135dd678a1d748936dcaf3cf97aadc94b129d2ba0d3  ../mag/lvs_cells/dig_top.spice
+7426442dd5e75d2f408f4c8cc7e1c1b0ed59fd6aee2fcf5a43cf51d66f1ae7cb  ../mag/lvs_cells/montg.spice
+41026a8e8c9441f1535f0879db2318b285626f43deeed5a3128864bb410b83ac  ../mag/lvs_cells/vref_decap.spice
+4c07a2d8b70c27c722056046c95d99f9c8f21cbe8b42215248838d513ef1685d  ../mag/lvs_cells/osc_cosc.spice
+f72b480bd86f0741d750e81b9929c86af6a536ad12ab7fb0828b064bcdf7c992  ../mag/lvs_dummies.txt
+
+## digital blocks (OpenROAD flow in pnr/)
+253ff49ef503d346453031748e19f7674ccc53fce8440d0f7af44c8c2d0332f2  ../pnr/pnr.tcl
+1cbf742e61d98826a70682e4da6b3108a74cde83bb8ec06617fcf509aa0364af  ../pnr/cfg_swdrv.tcl
+8ab19a85dd2601a3842ff1fedac7eff6e7171720042d9960c468e6ff74710ec2  ../pnr/cfg_dig_top.tcl
+34f99aa7926d53e957a1898dc2a6947968e8f9cd308a1b6e45986513e93f766f  ../pnr/swdrv.def
+72603e92304cc4a692366be1524ca856ab7dcaab42d613f6ae4d1ae3cee30aa3  ../pnr/dig_top.def
+
+## tile layout
+6e48cc8a72a1b2e827e9f8112dcab58f3296a54f462ddeb520464d7b5910e663  ../mag/mk_tile.tcl
+4ab1a97b2194cff48d16c6a17d354f1cb02b5000e4e30dae1b4b531ccd7d313e  ../mag/tw.py
+84b65e133c51dfda841c151f55af83016765d159cef71dafb93652055490e42f  ../mag/tile_wiring.tcl
+2a46baa0b30a183acb22bab8637b937c2b4f508f6f854aa8ea8044297e13e8bf  ../mag/tt_um_huanprojects_tsense.mag
+4797a5b10d1e86acb661cbba70d0111f36358e40f7d775c5affe71d9400a65fe  ../mag/bgr.mag
+cabd358372db8bd9af5c37fa631943c4df460f77e4335686ef781af089433a9a  ../mag/osc_core.mag
+27430f5e3b0dc15d590fe3548c3471933776a80f46730aa8d5ad9a2b838c3576  ../mag/vref_decap.mag
+14eda96f7f12a050b5aabc41eb8791b83d76ba42571b6bc78be272e6026c3049  ../mag/swdrv.mag
+7f580cfa05cddf57ad14065c50d3fe19c58bfed5a3d099a00a4c7992c61aca7c  ../mag/dig_top.mag
+6c88f3b23e32607ad74d99f27a5b97c0a1ffcc6f4ad61854ac48361deac556e8  ../mag/montg.mag
+ba1f03df41d18725521d50ccf17079b479c8cb50a79b8afcdedad56bcbd27172  ../gds/tt_um_huanprojects_tsense.gds
+76b8069bf459a3a8a83b640eada331c06df1185e9ec84865e4cdbe7125f4eb39  ../lef/tt_um_huanprojects_tsense.lef
+85b13a2734f700c994eaaa3db731be21e456c8070ca0762024f1cc1044f32bc9  ../src/project.v
+f62c112866b74095babbe0aea4f4690555c4f41a3d03a70d7a0ea7e237aa8ec2  ../info.yaml
+
+## checks on this layout (results_m7 section 4, results_m8 sections 1 and 2)
+Magic DRC (full): 0
+KLayout sky130A_mr.drc (FEOL, BEOL, offgrid): 0
+LVS, tile against mag/lvs_cells/tt_um_huanprojects_tsense.spice: Circuits match uniquely, 0 property errors
+LVS, flat extraction against the same schematic: Circuits match uniquely
+Magic antenna check: 0 violations
+Tiny Tapeout precheck, run locally: 15 of 15
+
+## handoff
+408f6beb2ffac15186f03935daf1eff24d500f9ee27d0128603a5e1c09d97a02  ../docs/ring_table.csv

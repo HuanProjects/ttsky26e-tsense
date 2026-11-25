@@ -1,0 +1,5 @@
+* osc_cosc: layout-only cell for a standalone LVS. The device line is copied unchanged from the frozen osc_core
+* subckt in ../xschem/simulation/osc_core.spice (docs/freeze_m6.txt); only the subckt wrapper is added.
+.subckt osc_cosc vcap VGND
+XCosc vcap VGND sky130_fd_pr__cap_mim_m3_1 W=25 L=25 MF=4 m=4
+.ends

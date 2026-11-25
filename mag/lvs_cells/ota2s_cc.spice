@@ -1,0 +1,5 @@
+* ota2s_cc: layout-only cell for a standalone LVS. The device line is copied unchanged from the frozen ota2s subckt
+* in ../xschem/simulation/bgr.spice (= ota2s.spice, sha256 71510555...); only the subckt wrapper is added.
+.subckt ota2s_cc cz OUT
+XCC cz OUT sky130_fd_pr__cap_mim_m3_1 W=25 L=25 MF=8 m=8
+.ends

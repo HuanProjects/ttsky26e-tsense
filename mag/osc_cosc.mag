@@ -1,0 +1,21 @@
+magic
+tech sky130A
+timestamp 1795296708
+<< metal3 >>
+rect 5432 100 5532 200
+<< metal4 >>
+rect 0 5200 5432 5300
+rect 1070 5050 1470 5200
+rect 3786 5050 4186 5200
+rect 1070 2490 1470 2650
+rect 3786 2490 4186 2650
+use osc_cosc_arr  osc_cosc_arr_0
+timestamp 1795294971
+transform 1 0 0 0 1 0
+box 0 0 5432 5140
+<< labels >>
+rlabel metal4 0 5200 100 5300 0 vcap
+port 1 nsew
+rlabel metal3 5432 100 5532 200 0 VGND
+port 2 nsew
+<< end >>

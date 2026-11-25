@@ -1,0 +1,23 @@
+* ota2s_nrows: layout-only cell for a standalone LVS. The device lines are copied unchanged from the frozen ota2s
+* subckt in ../xschem/simulation/bgr.spice (= ota2s.spice, sha256 71510555...); only the subckt wrapper is added.
+* g12 is internal to the cell.
+.subckt ota2s_nrows d1 x1 g3 OUT CHOP CHOPB VGND
+XMN1 d1 g12 VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XMN2 x1 g12 VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XMN3 OUT g3 VGND VGND sky130_fd_pr__nfet_01v8 L=1 W=7 nf=1 ad=2.03 as=2.03 pd=14.58 ps=14.58 nrd=0.0414285714285714
++ nrs=0.0414285714285714 sa=0 sb=0 sd=0 mult=1
+XDNA d1 VGND VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XDNB x1 VGND VGND VGND sky130_fd_pr__nfet_01v8 L=20 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=2 m=2
+XSD1 d1 CHOPB g12 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+XSD2 x1 CHOP g12 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+XSG2 g3 CHOP d1 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+XSG1 x1 CHOPB g3 VGND sky130_fd_pr__nfet_01v8 L=0.5 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.0483333333333333
++ nrs=0.0483333333333333 sa=0 sb=0 sd=0 mult=1
+.ends

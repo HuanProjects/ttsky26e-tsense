@@ -1,0 +1,12 @@
+* ota2s_rz: layout-only cell for a standalone LVS. The device lines are copied unchanged from the frozen ota2s
+* subckt in ../xschem/simulation/bgr.spice (= ota2s.spice, sha256 71510555...); only the subckt wrapper is added.
+.subckt ota2s_rz g3 cz VGND
+XRZ1 net1 g3 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ2 net2 net1 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ3 net3 net2 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ4 net4 net3 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ5 net5 net4 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRZ6 cz net5 VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRD1 VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+XRD2 VGND VGND VGND sky130_fd_pr__res_high_po_1p41 L=20 mult=1
+.ends

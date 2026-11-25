@@ -1,0 +1,10 @@
+#### load the sky130 PDK setting 
+source $env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/xschemrc
+
+#### append the folder to path
+set MYDIR [file dirname [file normalize [info script]]]
+append XSCHEM_LIBRARY_PATH :$MYDIR
+
+#### set the netlist output location
+set netlist_dir $MYDIR/simulation
+

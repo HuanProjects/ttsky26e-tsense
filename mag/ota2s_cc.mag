@@ -1,0 +1,27 @@
+magic
+tech sky130A
+timestamp 1794466698
+<< checkpaint >>
+rect 10234 -530 11594 830
+<< metal3 >>
+rect 10864 100 10964 200
+<< metal4 >>
+rect 1070 2490 1470 2650
+rect 3786 2490 4186 2650
+rect 6502 2490 6902 2650
+rect 9218 2490 9618 2650
+rect 1070 -60 1470 50
+rect 3786 -60 4186 50
+rect 6502 -60 6902 50
+rect 9218 -60 9618 50
+rect 0 -160 10864 -60
+use ota2s_cc_arr  ota2s_cc_arr_0
+timestamp 1794465364
+transform 1 0 0 0 1 0
+box 0 0 10864 5140
+<< labels >>
+rlabel metal4 10764 -160 10864 -60 0 cz
+port 1 nsew
+rlabel metal3 10864 100 10964 200 0 OUT
+port 2 nsew
+<< end >>
